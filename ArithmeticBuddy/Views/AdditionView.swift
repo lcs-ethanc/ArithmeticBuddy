@@ -15,6 +15,8 @@ struct AdditionView: View {
     @State var firstNumber = Int.random(in: 1...25)
     @State var secondNumber = Int.random(in: 1...25)
 
+    //Store user input
+    @State var givenInput = ""
     // Feedback to the user
     @State var feedback = ""
     
@@ -52,9 +54,11 @@ struct AdditionView: View {
             
             HStack {
                 Spacer()
-                Rectangle()
-                    .frame(width: 100, height: 50)
+                    TextField("Sum", text: $givenInput)
+                    .multilineTextAlignment(.trailing)
                     .padding()
+                    .frame(width: 200)
+                    .font(.system(size:50))
             }
             
             Spacer()
