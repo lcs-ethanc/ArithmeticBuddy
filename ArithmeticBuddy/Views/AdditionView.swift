@@ -99,7 +99,15 @@ struct AdditionView: View {
     // Check whether the user's answer was correct
     // Provide appropriate feedback
     func checkAnswer() {
-        
+        guard let intgivenInput = Int(givenInput) else {
+            feedback = "Please enter a valid number."
+            return
+        }
+        if intgivenInput == correctSum {
+            feedback = "Correct!"
+            } else{
+                feedback = "You Suck at Math!"
+        }
     }
     
     // Reset for a new question
